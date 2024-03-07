@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ball</title>
+    <style>
+        #pelota{
+            position: relative;
+            left: 0;
+            transition: left 0.5s ease;
+        }
+    </style>
+    <script>
+        function izquierda(){
+            var pelota = document.querySelector("img");
+            var position = parseInt(pelota.style.left) || 0;
+            pelota.style.left = (position - 10) + "px";
+        }
+
+        function derecha(){
+            var pelota = document.querySelector("img");
+            var position = parseInt(pelota.style.left) || 0;
+            pelota.style.left = (position + 10) + "px";
+        }
+        function arriba(){
+        var pelota = document.querySelector("img");
+        var position = parseInt(pelota.style.top) || 0;
+        pelota.style.top = (position - 10) + "px";
+    }
+    function abajo(){
+        var pelota = document.querySelector("img");
+        var position = parseInt(pelota.style.top) || 0;
+        pelota.style.top = (position + 10) + "px";
+    }
+    </script>
+</head>
+<body>
+    <input type="button" value="Izquierda" onclick="izquierda();">
+    <input type="button" value="Derecha" onclick="derecha();">
+    <br><br>
+    <input type="button" value="Arriba" onclick="arriba();">
+    <input type="button" value="Abajo" onclick="abajo();">
+    <br><br>
+    <img id="pelota" src="pelota.png" width="200px">
+
+  
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seguir el puntero del mouse</title>
+<style>
+  #imagen {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+  }
+</style>
+</head>
+<body>
+
+<img id="imagen" src="icono.png" alt="Imagen">
+
+<script>
+document.addEventListener('mousemove', function(event) {
+  var x = event.clientX;
+  var y = event.clientY;
+
+  var imagen = document.getElementById('imagen');
+  imagen.style.left = x + 'px';
+  imagen.style.top = y + 'px';
+});
+</script>
+
+</body>
+</html>

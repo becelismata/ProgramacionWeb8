@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    /*function obtenerHora() {
+        var fecha = new Date();
+        var hora = fecha.getHours();
+        var minutos = fecha.getMinutes();
+        var segundos = fecha.getSeconds();
+        var saludo;
+
+        if (hora < 12) {
+            saludo = 'Buenos días, la hora es: ' + hora + ':' + minutos + ':' + segundos + ' horas';
+        } else {
+            saludo = 'Buenas tardes, la hora es: ' + hora + ':' + minutos + ':' + segundos + ' horas';
+        }
+
+        alert(saludo);
+    }*/
+        
+        function saludo(hora){
+            var fecha= new Date();
+            var hora=fecha.getHours();
+            var minutos = fecha.getMinutes();
+            if (hora<12){
+                //saludo='Buenos dias';
+                saludo='Buenos días, la hora es: ' + hora + ':' + minutos + ' horas';
+            }else if (hora>=12 && hora<19){
+                //saludo ='Buenas tardes';
+                saludo='Buenas tardes, la hora es: ' + hora + ':' + minutos + ' horas';
+            }else{
+                //saludo='Buenas noches';
+                saludo='Buenas noches, la hora es: ' + hora + ':' + minutos + ' horas';
+            }
+            alert(saludo);
+        }
+       function alerta(boton){     
+            //saludo='Buenas tardes';
+            if (boton.value=='AM'){
+                saludo='Buenos días';
+            }else{
+                saludo='Buenas tardes';
+            }
+            //alert(saludo);
+            boton.value=saludo;
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="CONFIRM" onclick="confirm('Hola');">
+    <input type="button" value="ALERT" onclick="alert('Hola');">
+    <br><br>
+    <input type="button" value="AM" onclick="alerta(this);">
+    <input type="button" value="PM" onclick="alerta(this);">
+    <input type="button" value="Saludo" onclick="saludo(this)";>
+</body>
+</html>

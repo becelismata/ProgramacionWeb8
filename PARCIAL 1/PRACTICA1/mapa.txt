@@ -1,0 +1,53 @@
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+       <div id="regions_div" style="width: 900px; height: 500px;"></div>
+   
+
+google.charts.load('current', {
+        'packages':['geochart'],
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['State', 'Popularity'],
+          ['Veracruz', 35],
+          ['Distrito Federal', 20],
+          ['Nuevo León', 12],
+          ['Chiapas', 15],
+          ['Yucatán', 9],
+          ['Baja California', 42],
+          ['Baja California Sur', 22],
+          ['Sinaloa', 52],
+          ['Chihuahua', 13],
+          ['Coahuila', 19],
+          ['San Luis Potosí', 22],
+          ['Sonora', 70],
+          ['Jalisco', 29],
+          ['Nayarit', 30],
+          ['Durango', 23],
+          ['Zacatecas', 31],
+          ['Aguascalientes', 60],
+          ['Guanajuato', 33],
+          ['Tamaulipas', 2],
+          ['Oaxaca', 12],
+          ['Tabasco', 22],
+          ['Quintana Roo', 2],
+          ['Michoacán', 2],
+          ['Colima', 2],
+          ['Puebla', 52],
+          ['Tlaxcala', 2],
+          ['Guerrero', 2],
+          ['Hidalgo', 2],
+          ['Veracruz', 2]
+          
+        ]);
+
+        var options = {
+        region: 'MX',
+        resolution: 'provinces'
+        };
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ball 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #pelota{
+            position: relative;
+            left: 0;
+            transition: left 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <img id="pelota" src="pelota.png" width="200px">
+<script>
+    document.addEventListener('click', function(event) {
+        var pelota = document.getElementById('pelota');
+        pelota.style.left = event.clientX + 'px';
+        pelota.style.top = event.clientY + 'px';
+    });
+    
+
+</script>
+    
+</body>
+</html>
